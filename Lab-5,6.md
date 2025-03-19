@@ -1,14 +1,16 @@
-# Lab 5 & 6: Editing Files in Linux Using Vim and Nano
-
-## Objective
-The aim of this lab is to get hands-on experience with two widely used text editors in Linux: **Vim** and **Nano**. You will edit the `editing_final_lab.txt` file, use Vim's visual mode for text manipulation, and perform specific tasks like removing characters and retaining selected portions of text.
+# Lab 5 & 6
 
 ---
 
-## Commands and Concepts Used
+## Experiment Description
+This lab focuses on editing files in Linux using two popular text editors: **Nano** and **Vim**. The tasks include creating a file, editing it using both editors, and performing specific text manipulation tasks in Vim.
+
+---
+
+## Approach
 
 ### 1. Preparing the Lab File
-To begin, ensure the `editing_final_lab.txt` file exists. If it is not present, create it using:
+Ensure the file `editing_final_lab.txt` exists. If not, create it using:
 ```bash
 touch editing_final_lab.txt
 ```
@@ -18,79 +20,57 @@ To simplify file access, store its path in a shell variable:
 lab_file="editing_final_lab.txt"
 ```
 
-#### Screenshot:
-![Setting the shell variable](screenshots/set_lab_file.png)
-
 ---
 
 ### 2. Editing with Nano
-Nano is a straightforward and beginner-friendly text editor. Open the file in Nano using:
-```bash
-nano $lab_file
-```
+Nano is a beginner-friendly text editor.
 
-#### Screenshot:
-![Opening Nano](screenshots/nano_open.png)
-
-#### Tasks in Nano:
-1. Add the following lines to the file:
+#### Steps:
+1. Open the file in Nano:
+   ```bash
+   nano $lab_file
+   ```
+2. Add the following lines:
    ```
    This is the first line of the file.
    This is the second line of the file.
    This is the third line of the file.
    ```
-
-2. Save the changes by pressing `CTRL + O`, and exit Nano by pressing `CTRL + X`.
+3. Save the changes (`CTRL + O`) and exit (`CTRL + X`).
 
 #### Screenshot:
-![Saving and exiting Nano](screenshots/nano_save_exit.png)
+![Editing with Nano](screenshots/nano_save_exit.png)
 
 ---
 
 ### 3. Editing with Vim
-Vim is a versatile and powerful text editor. Open the file in Vim using:
-```bash
-vim $lab_file
-```
+Vim is a powerful text editor with advanced features.
 
-#### Screenshot:
-![Opening Vim](screenshots/vim_open.png)
-
-#### Tasks in Vim:
-1. **Activate Visual Mode**:
-   - Place the cursor on the first line.
-   - Press `v` to enter visual mode.
-
-#### Screenshot:
-![Entering Visual Mode](screenshots/vim_visual_mode.png)
-
+#### Steps:
+1. Open the file in Vim:
+   ```bash
+   vim $lab_file
+   ```
 2. **Delete the Last Seven Characters of the First Line**:
-   - While in visual mode, highlight the last seven characters of the first line.
-   - Press `d` to delete the selected text.
-
+   - Enter visual mode (`v`), highlight the last seven characters, and press `d`.
 3. **Keep Only the First Four Characters of the First Line**:
-   - Move the cursor to the start of the first line.
-   - Press `4l` to move the cursor to the fourth character.
-   - Press `v` to enter visual mode, then highlight the rest of the characters after the fourth one.
-   - Press `d` to delete the highlighted portion.
-
-4. **Save and Exit**:
-   - Press `ESC` to switch to command mode.
-   - Type `:wq` and press `Enter` to save the file and exit Vim.
+   - Move to the start of the line, press `4l`, enter visual mode (`v`), highlight the rest, and press `d`.
+4. Save and exit:
+   - Press `ESC`, type `:wq`, and press `Enter`.
 
 #### Screenshot:
-![Saving and exiting Vim](screenshots/vim_save_exit.png)
+![Editing with Vim](screenshots/vim_save_exit.png)
 
 ---
 
 ## Verifying Command Execution
-To confirm the changes, display the file's contents using:
+To confirm the changes, display the file's contents:
 ```bash
 cat $lab_file
 ```
 
 #### Screenshot:
-![Verifying file contents](screenshots/cat_file.png)
+![Verifying File Contents](screenshots/cat_file.png)
 
 ### Expected Output:
 If the file initially contained:
@@ -108,6 +88,8 @@ This
 ---
 
 ## Conclusion
-In this lab, you explored how to use **Nano** and **Vim** for editing files in Linux. You practiced essential text manipulation techniques in Vim, such as entering visual mode, deleting specific characters, and retaining selected portions of text. These skills are fundamental for efficient file editing and Linux scripting.
+In this lab, you learned how to:
+- Use **Nano** for basic file editing.
+- Use **Vim** for advanced text manipulation, including deleting specific characters and retaining selected portions of text.
 
----
+These skills are essential for efficient file editing and Linux scripting.
