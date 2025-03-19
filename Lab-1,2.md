@@ -40,7 +40,7 @@ mkdir friends family work
 ---
 
 ### 3. Verifying Created Files and Directories
-Use the `ls` command to list the created files and directories.
+The `ls` command is used to list the created files and directories.
 
 #### Syntax:
 ```bash
@@ -54,10 +54,17 @@ ls
 ### 1. Creating Files and Directories
 ![Creating Files and Directories](screenshots/create_files_dirs.png)
 
+---
+
 ### 2. Verifying Created Files and Directories
 ![Listing Files](screenshots/list_files.png)
 
 ---
 
 ## Conclusion
-This lab demonstrated how to create multiple files using `touch` with brace expansion and directories using `mkdir`. These commands are essential for efficient file and directory management in Linux.
+This lab demonstrated how to:
+- Create multiple files using `touch` with brace expansion.
+- Create multiple directories using `mkdir`.
+- Verify the created files and directories using `ls`.
+
+These commands are essential for efficient file and directory management in Linux.
