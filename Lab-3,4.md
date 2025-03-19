@@ -1,30 +1,52 @@
-# Lab 3 & 4: Exploring man Pages, Searching Commands, and Using Brace Expansion in Linux
+# Lab 3 & 4
 
-## Objective
-The purpose of this lab is to learn how to use Linux manual (`man`) pages, search for commands associated with `ext4`, and utilize **brace expansion** to generate custom strings of characters.
+---
 
-## Commands Used
+## Experiment Description
+This lab focuses on using Linux manual (`man`) pages, searching for commands related to `ext4`, and utilizing **brace expansion** to generate custom strings efficiently.
 
-### Viewing the Manual Page for `gedit`
-To access the manual page for `gedit`, use the following command:
+---
+
+## Approach
+
+### 1. Viewing the Manual Page for `gedit`
+The `man` command is used to access the manual page for a specific command.
+
+#### Syntax:
+```bash
+man <command_name>
+```
+
+#### Example:
 ```bash
 man gedit
 ```
-#### Explanation:
-- The `man` command opens the manual page for a specified command.
-- `gedit` is a text editor commonly used in the GNOME desktop environment.
 
-### Searching for Commands Related to `ext4`
-To locate commands associated with the `ext4` file system, use:
+#### Explanation:
+- Opens the manual page for the `gedit` text editor.
+
+---
+
+### 2. Searching for Commands Related to `ext4`
+The `man -k` command searches for commands associated with a specific keyword.
+
+#### Syntax:
+```bash
+man -k <keyword>
+```
+
+#### Example:
 ```bash
 man -k ext4
 ```
-#### Explanation:
-- The `-k` option searches through manual page descriptions for the specified keyword (`ext4`).
-- This is useful for finding commands related to managing or tuning the ext4 file system.
 
-### Using Brace Expansion
-Brace expansion is a feature that allows you to generate strings of characters efficiently. It is particularly useful for creating lists or sequences.
+#### Explanation:
+- Searches for commands related to the `ext4` file system.
+
+---
+
+### 3. Using Brace Expansion
+Brace expansion is used to generate strings efficiently.
 
 #### Example 1: Creating a List of Strings
 ```bash
@@ -53,27 +75,29 @@ echo backup_{2024..2026}_v{1..3}.zip
 backup_2024_v1.zip backup_2024_v2.zip backup_2024_v3.zip backup_2025_v1.zip backup_2025_v2.zip backup_2025_v3.zip backup_2026_v1.zip backup_2026_v2.zip backup_2026_v3.zip
 ```
 
-## Verifying Command Execution
-To confirm the execution of the above commands, use:
-```bash
-man gedit
-man -k ext4
-echo file_{A,B,C}.txt
-echo number_{1..5}
-```
+---
 
-### Screenshots
-Below are screenshots illustrating the execution of the commands:
+## Snippets of the Task Performed
 
-#### 1. Viewing the `gedit` manual page:
+### 1. Viewing the `gedit` Manual Page
 ![gedit man page](screenshots/mangedit.png)
-![gedit man page](screenshots/gedit_man.png)
 
-#### 2. Searching for commands related to `ext4`:
+---
+
+### 2. Searching for Commands Related to `ext4`
 ![Searching ext4](screenshots/search_ext4.png)
 
-#### 3. Demonstrating brace expansion:
+---
+
+### 3. Demonstrating Brace Expansion
 ![Brace Expansion](screenshots/brace_expansion.png)
 
+---
+
 ## Conclusion
-In this lab, we explored how to use `man` pages, searched for commands related to `ext4` using `man -k`, and demonstrated the versatility of **brace expansion** for generating multiple strings. These techniques are essential for efficient command-line operations and scripting in Linux.
+In this lab, we:
+- Used the `man` command to view manual pages.
+- Searched for commands related to `ext4` using `man -k`.
+- Demonstrated the use of **brace expansion** for generating strings.
+
+These techniques are essential for efficient command-line operations and scripting in Linux.
