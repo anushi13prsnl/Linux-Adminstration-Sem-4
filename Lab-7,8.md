@@ -1,14 +1,18 @@
-# Lab 7 & 8: Managing Permissions and Directories in Linux
-
-## Objective
-This lab focuses on learning how to manage directories, set permissions using symbolic and octal methods, and configure the `umask` for a user. You will create a directory, modify its permissions, and ensure proper access control for users and groups.
+# Lab 7 & 8
 
 ---
 
-## Commands and Concepts Used
+## Experiment Description
+This lab focuses on managing directories, setting permissions using symbolic and octal methods, and configuring the `umask` for a user. The tasks include creating directories, modifying permissions, and ensuring proper access control.
 
-### 1. Create the `/home/consultants` Directory
-To create the `/home/consultants` directory, use the `mkdir` command:
+---
+
+## Approach
+
+### 1. Creating the `/home/consultants` Directory
+The `mkdir` command is used to create the directory.
+
+#### Command:
 ```bash
 sudo mkdir /home/consultants
 ```
@@ -18,8 +22,10 @@ sudo mkdir /home/consultants
 
 ---
 
-### 2. Add Write Permission to the `consultants` Group
-To grant write permission to the `consultants` group, use the `chmod` command with the symbolic method:
+### 2. Adding Write Permission to the `consultants` Group
+The `chmod` command with the symbolic method is used to grant write permissions to the group.
+
+#### Command:
 ```bash
 sudo chmod g+w /home/consultants
 ```
@@ -32,8 +38,10 @@ sudo chmod g+w /home/consultants
 
 ---
 
-### 3. Restrict Access for Others
-To restrict access for others to the `/home/consultants` directory, use the `chmod` command with the octal method:
+### 3. Restricting Access for Others
+The `chmod` command with the octal method is used to restrict access for others.
+
+#### Command:
 ```bash
 sudo chmod 770 /home/consultants
 ```
@@ -49,8 +57,10 @@ sudo chmod 770 /home/consultants
 
 ---
 
-### 4. Verify Directory Permissions
-To check the permissions of the `/home/consultants` directory, use the `ls -ld` command:
+### 4. Verifying Directory Permissions
+The `ls -ld` command is used to check the permissions of the directory.
+
+#### Command:
 ```bash
 ls -ld /home/consultants
 ```
@@ -65,24 +75,22 @@ drwxrwx--- 2 root consultants 4096 Oct 10 12:34 /home/consultants
 
 ---
 
-### 5. Modify the Default `umask` for the `operator1` User
-The `umask` determines the default permissions for newly created files and directories. To modify the `umask` for the `operator1` user, follow these steps:
+### 5. Modifying the Default `umask` for a User
+The `umask` determines the default permissions for newly created files and directories.
 
+#### Steps:
 1. Switch to the `operator1` user:
    ```bash
    sudo su - operator1
    ```
-
-2. Update the `umask` value in the user's shell configuration file (e.g., `.bashrc`):
+2. Update the `umask` value in the user's shell configuration file:
    ```bash
    echo "umask 007" >> ~/.bashrc
    ```
-
 3. Apply the changes:
    ```bash
    source ~/.bashrc
    ```
-
 4. Verify the updated `umask`:
    ```bash
    umask
@@ -99,8 +107,10 @@ The `umask` determines the default permissions for newly created files and direc
 
 ---
 
-### 6. Confirm the Updated `umask`
-To confirm that the new `umask` is applied, create a new file and directory, then check their permissions:
+### 6. Confirming the Updated `umask`
+To confirm the new `umask`, create a file and a directory, then check their permissions.
+
+#### Commands:
 ```bash
 touch testfile
 mkdir testdir
@@ -123,5 +133,3 @@ In this lab, you practiced:
 3. Configuring the `umask` to control default permissions for files and directories.
 
 These techniques are essential for managing file systems and ensuring proper access control in Linux environments.
-
----
